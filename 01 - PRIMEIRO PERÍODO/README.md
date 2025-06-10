@@ -16,4 +16,4 @@ Este repositório contém as atividades da disciplina de todas as matérias que 
 
 ## 🚀 Objetivo
 Guardar as atividades realizadas para fins de consulta e revisão de aprendizado.  
-Sinta-se à vontade para explorar e sugerir melhorias!
+Sugestão de melhorias são bem aceitas!
