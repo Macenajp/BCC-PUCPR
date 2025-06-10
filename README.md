@@ -2,8 +2,8 @@
 
 Repositório pessoal contendo atividades, exercícios, projetos e anotações desenvolvidas ao longo do curso de **Bacharelado em Ciência da Computação** pela **Pontifícia Universidade Católica do Paraná (PUCPR)**.
 
-> 📍 Início do curso: 2025  
 > 👨‍💻 Autor: João Pedro Macena C.
+> 📍 Início do curso: 2025  
 
 ---
 
