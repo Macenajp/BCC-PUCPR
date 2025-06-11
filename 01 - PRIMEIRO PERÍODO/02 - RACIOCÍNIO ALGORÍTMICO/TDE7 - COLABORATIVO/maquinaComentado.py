@@ -132,12 +132,12 @@ def conferindo_pagamento(produto_selecionado, deseja_comprar, fazendo_pagamento)
 # 🔁 LOOP PRINCIPAL DO SISTEMA
 # =============================
 while True:
-    escolha = seleção_de_modo()  # Seleciona modo de operação
+    escolha = seleção_de_modo()                                               # Seleciona modo de operação
 
-    if escolha == 1:  # Modo administrador
+    if escolha == 1:                                                          # Modo administrador
         modos = modo_administrador()
 
-        if modos == 1:  # Cadastrar novo produto
+        if modos == 1:                                                        # Cadastrar novo produto
             novo_nome = input('Digite o nome do novo produto: ')
             novo_preço = float(input('Digite o preço do novo produto: '))
             qtd_produto = int(input('Digite a quantidade em estoque: '))
@@ -147,7 +147,7 @@ while True:
             valores_e_quantidades.append([novo_id, novo_preço, qtd_produto])
             print(f'Produto "{novo_nome}" cadastrado com sucesso!')
 
-        elif modos == 2:  # Editar produto existente
+        elif modos == 2:                                                      # Editar produto existente
             produto_id = int(input('Digite o ID do produto que deseja editar: '))
             editar_nome = input('Digite o novo nome do produto: ')
             editar_preço = float(input('Digite o novo preço do produto: '))
