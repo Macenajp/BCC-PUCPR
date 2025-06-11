@@ -1,19 +1,18 @@
 # =============================
 # 📦 IMPORTAÇÃO DE MÓDULOS
-# =============================
-from time import sleep  # Importa a função sleep para simular tempo de espera
 
-# =============================
+from time import sleep              # Importa a função sleep para simular tempo de espera
+
+# ======================================
 # 📋 DADOS INICIAIS (ESTOQUE E PRODUTOS)
-# =============================
-
+# ======================================
 # Lista com ID, preço e quantidade de cada produto
 valores_e_quantidades = [
-    [1, 3.75, 2],     # Produto 1: Coca-Cola
-    [2, 3.67, 5],     # Produto 2: Pepsi
-    [3, 9.96, 1],     # Produto 3: Monster
-    [4, 1.25, 100],   # Produto 4: Café
-    [5, 13.99, 2],    # Produto 5: Redbull
+    [1, 3.75, 2],                 # Produto 1: Coca-Cola
+    [2, 3.67, 5],                 # Produto 2: Pepsi
+    [3, 9.96, 1],                 # Produto 3: Monster
+    [4, 1.25, 100],               # Produto 4: Café
+    [5, 13.99, 2],                # Produto 5: Redbull
 ]
 
 # Lista com nomes dos produtos
@@ -30,24 +29,24 @@ estoque_troco = {
 # =============================
 def calcular_troco(produto_selecionado, fazendo_pagamento):
     print('-=' * 20)
-    troco = fazendo_pagamento - valores_e_quantidades[produto_selecionado][1]  # Valor do troco
-    troco_centavos = int(round(troco * 100))  # Conversão para centavos para evitar erros de ponto flutuante
-    troco_usado = {}  # Dicionário com as moedas/cédulas usadas
+    troco = fazendo_pagamento - valores_e_quantidades[produto_selecionado][1] # Valor do troco
+    troco_centavos = int(round(troco * 100))                                  # Conversão para centavos para evitar erros de ponto flutuante
+    troco_usado = {}                                                          # Dicionário com as moedas/cédulas usadas
 
-    for moeda in sorted(estoque_troco, reverse=True):  # Ordena moedas/cédulas do maior para o menor
+    for moeda in sorted(estoque_troco, reverse=True):                         # Ordena moedas/cédulas do maior para o menor
         moeda_centavos = int(round(moeda * 100))
-        quantidade_necessaria = troco_centavos // moeda_centavos  # Quantidade necessária dessa moeda
-        quantidade_usada = min(quantidade_necessaria, estoque_troco[moeda])  # Quantidade que pode ser usada
+        quantidade_necessaria = troco_centavos // moeda_centavos              # Quantidade necessária dessa moeda
+        quantidade_usada = min(quantidade_necessaria, estoque_troco[moeda])   # Quantidade que pode ser usada
 
         if quantidade_usada > 0:
             troco_usado[moeda] = quantidade_usada
             troco_centavos -= quantidade_usada * moeda_centavos
 
-    if troco_centavos > 0:  # Se não conseguiu dar o troco completo
+    if troco_centavos > 0:                                                 # Se não conseguiu dar o troco completo
         print("Não há troco suficiente no estoque! Venda cancelada.")
         return None
 
-    for moeda, qtd in troco_usado.items():  # Atualiza estoque de troco
+    for moeda, qtd in troco_usado.items():                                 # Atualiza estoque de troco
         estoque_troco[moeda] -= qtd
 
     print(f'Seu troco é: R$ {troco:.2f}')
