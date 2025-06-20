@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exímio - Login</title>
+<link rel="stylesheet" href="telalogin.css">
+</head>
+<body>
+<div class="login-container">
+    <!-- LOGO -->
+    <div class="logo">EXÍMIO</div>
+    <div class="linha"></div>
+    <div class="subtitulo">Plataforma de Estudos</div>
+
+    <!-- FORMULÁRIO -->
+    <form class="formulario" id="loginForm">
+      <input type="email" placeholder="E-mail" required>
+      <input type="password" placeholder="Senha" required>
+
+      <div class="botoes">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Garantir que o evento seja interceptado corretamente
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Evita que o formulário envie de verdade
+      // Simula login bem-sucedido e redireciona
+      window.location.href = 'telalogin.html';
+    });
+  </script>
+</body>
+</html>

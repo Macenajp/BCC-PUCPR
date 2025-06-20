@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogos de Sustentabilidade</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6f2e6;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c6e49;
+    }
+    .game {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    button {
+      background: #2c6e49;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3d8b60;
+    }
+    .drag-item, .drop-zone {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      border: 2px dashed #aaa;
+      border-radius: 5px;
+      width: 120px;
+      height: 50px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jogos sobre Sustentabilidade</h1>
+
+  <!-- QUIZ -->
+  <div class="game">
+    <h2>1. Quiz sobre Reciclagem</h2>
+
+    <p>Qual destes itens deve ser descartado no lixo reciclável?</p>
+    <button onclick="alert('Correto! Papel é reciclável.')">Papel</button>
+    <button onclick="alert('Errado! Restos de comida vão no lixo orgânico.')">Restos de comida</button>
+    <button onclick="alert('Errado! Pilhas vão no lixo tóxico.')">Pilhas</button>
+
+    <p>Qual material NÃO é reciclável?</p>
+    <button onclick="alert('Correto! Espelhos não são recicláveis.')">Espelho</button>
+    <button onclick="alert('Errado! Plástico é reciclável.')">Plástico</button>
+    <button onclick="alert('Errado! Papelão é reciclável.')">Papelão</button>
+
+    <p>Qual das opções é um material reciclável?</p>
+    <button onclick="alert('Correto! Garrafa PET é reciclável.')">Garrafa PET</button>
+    <button onclick="alert('Errado! Bituca de cigarro é lixo tóxico.')">Bituca de cigarro</button>
+    <button onclick="alert('Errado! Papel sujo não pode ser reciclado.')">Papel engordurado</button>
+
+    <p>Onde devemos jogar uma lâmpada quebrada?</p>
+    <button onclick="alert('Errado! Azul é para papel.')">Azul</button>
+    <button onclick="alert('Errado! Vermelho é para plástico.')">Vermelho</button>
+    <button onclick="alert('Correto! Deve ir em descarte especial/tóxico.')">Descarte Especial</button>
+  </div>
+
+  <!-- VERDADEIRO OU FALSO -->
+  <div class="game">
+    <h2>2. Verdadeiro ou Falso</h2>
+
+    <p>Vidro pode ser reciclado infinitamente sem perder qualidade.</p>
+    <button onclick="alert('Correto! Vidro é 100% reciclável.')">Verdadeiro</button>
+    <button onclick="alert('Errado! Isso é verdadeiro.')">Falso</button>
+
+    <p>Todo tipo de papel pode ser reciclado.</p>
+    <button onclick="alert('Errado! Papel engordurado ou sujo não pode ser reciclado.')">Verdadeiro</button>
+    <button onclick="alert('Correto! Nem todo papel pode ser reciclado.')">Falso</button>
+
+    <p>Latas de alumínio demoram cerca de 200 anos para se decompor.</p>
+    <button onclick="alert('Correto! Alumínio leva séculos para desaparecer.')">Verdadeiro</button>
+    <button onclick="alert('Errado! Leva sim muito tempo.')">Falso</button>
+
+    <p>Plástico biodegradável se decompõe em até 1 semana.</p>
+    <button onclick="alert('Errado! Ele pode levar meses.')">Verdadeiro</button>
+    <button onclick="alert('Correto! Isso é falso.')">Falso</button>
+
+    <p>Papel reciclado consome menos água do que papel novo.</p>
+    <button onclick="alert('Correto! Ele economiza água e energia.')">Verdadeiro</button>
+    <button onclick="alert('Errado! O reciclado é mais sustentável.')">Falso</button>
+  </div>
+
+  <!-- LIXEIRA CERTA -->
+  <div class="game">
+    <h2>3. Lixeira Certa</h2>
+
+    <p><strong>Papel:</strong></p>
+    <button onclick="alert('Correto! Azul é para papel.')">Azul</button>
+    <button onclick="alert('Errado! Verde é para vidro.')">Verde</button>
+
+    <p><strong>Metal:</strong></p>
+    <button onclick="alert('Errado! Vermelho é para plástico.')">Vermelho</button>
+    <button onclick="alert('Correto! Amarelo é para metal.')">Amarelo</button>
+
+    <p><strong>Plástico:</strong></p>
+    <button onclick="alert('Correto! Vermelho é para plástico.')">Vermelho</button>
+    <button onclick="alert('Errado! Azul é para papel.')">Azul</button>
+
+    <p><strong>Vidro:</strong></p>
+    <button onclick="alert('Correto! Verde é para vidro.')">Verde</button>
+    <button onclick="alert('Errado! Marrom não é usado no Brasil.')">Marrom</button>
+
+    <p><strong>Orgânico:</strong></p>
+    <button onclick="alert('Errado! Azul é para papel.')">Azul</button>
+    <button onclick="alert('Correto! Marrom é para lixo orgânico.')">Marrom</button>
+
+    <p><strong>Lixo Perigoso (pilhas, baterias):</strong></p>
+    <button onclick="alert('Errado! Vermelho é plástico.')">Vermelho</button>
+    <button onclick="alert('Correto! Deve ir para descarte especial.')">Descarte Especial</button>
+  </div>
+
+  <!-- ARRASTE E SOLTE -->
+  <div class="game">
+    <h2>4. Arraste e Solte: Jogue o lixo no lugar certo</h2>
+    <p>Arraste os itens para o tipo de lixo correto:</p>
+
+    <div>
+      <div class="drag-item" draggable="true" ondragstart="drag(event)" id="garrafa">Garrafa PET</div>
+      <div class="drag-item" draggable="true" ondragstart="drag(event)" id="cascab">Casca de Banana</div>
+      <div class="drag-item" draggable="true" ondragstart="drag(event)" id="prego">Prego</div>
+      <div class="drag-item" draggable="true" ondragstart="drag(event)" id="papel">Papel</div>
+      <div class="drag-item" draggable="true" ondragstart="drag(event)" id="pilha">Pilha</div>
+    </div>
+
+    <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" id="plastico">Plástico</div>
+    <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" id="organico">Orgânico</div>
+    <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" id="metal">Metal</div>
+    <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" id="papelzone">Papel</div>
+    <div class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)" id="especial">Descarte Especial</div>
+  </div>
+
+  <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      const data = ev.dataTransfer.getData("text");
+      const item = document.getElementById(data);
+      const dropZone = ev.target.id;
+
+      const corretos = {
+        garrafa: "plastico",
+        cascab: "organico",
+        prego: "metal",
+        papel: "papelzone",
+        pilha: "especial"
+      };
+
+      if (corretos[data] === dropZone) {
+        ev.target.appendChild(item);
+        alert("Correto!");
+      } else {
+        alert("Errado! Tente novamente.");
+      }
+    }
+  </script>
+</body>
+</html>
