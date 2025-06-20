@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    margin: 20px;
+}
+
+.search-bar {
+    width: 200px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.search-bar:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+}
+
+.logo {
+    height: 80px;
+    margin-right: 20px;
+    width: 15%;
+}
+
+.nav-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #79c16c;
+}
+
+
+nav ul li a.active {
+    background-color: #4CAF50;
+}
+nav ul li:nth-child(4) a {
+    background-color: #4CAF50;
+}
+
+body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    h1 {
+      color: #4caf50;
+      margin-bottom: 40px;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .galeria img {
+      width: 250px;
+      height: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+.main {
+      position: relative;
+      height: 400px;
+      margin-top: 100px;
+    }
+
+    /* Imagens niveladas */
+    .main img {
+      position: absolute;
+      bottom: 0;
+      object-fit: contain;
+    }
+
+    .moita-esquerda {
+      left: 0;
+      height: 650px;
+      z-index: 3;
+      top: -20px;
+    }
+
+    .moita-direita {
+      right: 0px;
+      height: 300px;
+      z-index: 3;
+      top: 250px;
+    }
+
+    .floresta {
+      right: 0px;
+      height: 520px;
+      z-index: 2;
+      top: 10px;
+    }
+
+    .lago {
+      left: 47%;
+      transform: translateX(-50%);
+      height: 600px;
+      z-index: 1;
+      top: 20px;
+    }
