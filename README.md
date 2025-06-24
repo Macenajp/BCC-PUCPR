@@ -10,10 +10,3 @@ Repositório pessoal contendo atividades, exercícios, projetos e anotações de
 ## 🗂️ Organização por Período
 
 Cada pasta representa um período do curso, contendo subpastas específicas para cada disciplina do curso.
-
----
-
-## 💻 Linguagens Utilizadas:
-- HTML, CSS, JavaScript;
-- Java (Processing);
-- Python;
