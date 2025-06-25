@@ -1,6 +1,5 @@
 # Bibliotecas que usei:
 import random               # Vai ser usado para fazer as escolhas aleatórias para cada questão
-from ctypes import HRESULT
 from time import sleep      # Só por motivos estéticos
 
 
