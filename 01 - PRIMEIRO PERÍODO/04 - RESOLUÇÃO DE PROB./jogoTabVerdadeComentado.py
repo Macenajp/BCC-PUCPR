@@ -19,7 +19,7 @@ def jogo():
         conectivos = ["and", "or", "not P", "not Q", "P -> Q", "P <-> Q"]
         operação = random.choice(conectivos)
 
-        # Monta a expressão e calcula o resultado correto com base na variável "operação".
+        # Vai montar a expressão e calcular o resultado correto se baseando na variável "operação".
         if operação == "and":
             resultado = P and Q
             expressãoLógica = f"{P} and {Q}"
