@@ -1,6 +1,6 @@
 # Bibliotecas que usei:
-import random               # O uso do "random" é o que vai fazer o jogo funcionar como deve, visto que ele que vai escolher aleatoriamente como vão ser as expressões.
-from time import sleep      # Usado mais por estética, ele vai gerar um "delay" antes de iniciar cada rodada, deixando o jogo mais fluido.
+import random                           # O uso do "random" é o que vai fazer o jogo funcionar como deve, visto que ele que vai escolher aleatoriamente como vão ser as expressões.
+from time import sleep                  # Usado mais por estética, ele vai gerar um "delay" antes de iniciar cada rodada, deixando o jogo mais fluido.
 
 
 # Corpo do código:
