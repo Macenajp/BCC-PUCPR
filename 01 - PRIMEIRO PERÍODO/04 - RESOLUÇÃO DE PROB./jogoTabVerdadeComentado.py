@@ -7,7 +7,7 @@ from time import sleep      # Usado mais por estética, ele vai gerar um "delay"
 def jogo():
     acertos = 0                         # Pontuação inicial que o usuário vai ter quando começar o jogo.
 
-    for rodada in range(1, 6):          # Coloquei esse "1, 6" para a string "rodada" não começar automaticamente em "0".
+    for rodada in range(1, 6):          # Coloquei esse "1, 6" para a variável "rodada" não começar automaticamente em "0". Fazendo ela iniciar em 1 até 5 e não 0 até 4
         sleep(0.8)                      # Esse é o "delay".
         print(f"\n========================================================== \nRodada: {rodada}")
 
@@ -44,7 +44,7 @@ def jogo():
             expressãoLógica = f"{P} <-> {Q}"
 
         # O que o usuário vai ver e usar:
-        while True:
+        while True:                                                              # O loop vai validadar a entrada ('v' ou 'f')
             print("Analise a seguinte expressão e responda (use 'v' ou 'f'):")
             print(f"Expressão: {expressãoLógica}")
             respostaUsuário = input("Resposta: ")
@@ -60,7 +60,7 @@ def jogo():
                 acertos += 1                                                    # Vai somar mais um ponto na pontuação se a resposta estiver correta.
             else:
                 print("Você errou!")
-            break                                                               # Encerra o loop caso o usuário use o caracteres certo.
+            break                                                               # Encerra o loop caso o usuário use um dos caracteres válidos.
 
     print(f"\n=========================================================="
           f"\n         O jogo acabou. Sua pontuação foi: {acertos}/5."
