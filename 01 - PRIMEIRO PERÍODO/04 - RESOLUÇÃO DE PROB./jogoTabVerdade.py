@@ -6,7 +6,7 @@ def jogo():
 
     for rodada in range(1, 6):
         sleep(0.8)
-        print(f"\nRodada: {rodada}")
+        print(f"\n========================================================== \nRodada: {rodada}")
 
         P = random.choice([True, False])
         Q = random.choice([True, False])
@@ -39,9 +39,9 @@ def jogo():
             expressãoLógica = f"{P} <-> {Q}"
 
         while True:
-            print("Analise a seguinte expressão e responda:")
+            print("Analise a seguinte expressão e responda (use 'v' ou 'f'):")
             print(f"Expressão: {expressãoLógica}")
-            respostaUsuário = input("Resposta (v / f): ")
+            respostaUsuário = input("Resposta: ")
             respostaCorreta = "v" if resultado else "f"
 
             if respostaUsuário not in ["v", "f"]:
@@ -55,5 +55,7 @@ def jogo():
                 print("Você errou!")
             break
 
-    print(f"\nO jogo acabou. Das cinco questões, você acertou: {acertos}.")
+    print(f"\n=========================================================="
+          f"\n         O jogo acabou. Sua pontuação foi: {acertos}/5."
+          f"\n==========================================================")
 jogo()
