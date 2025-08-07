@@ -45,9 +45,41 @@ else
 
 print("O valor final de sua compra ficou:", valorFinal)
 
+# 
+
+numero1 = int(input("Insira o primeiro número: "))
+numero2 = int(input("Insira o segundo número: "))
+numero3 = int(input("Insira o terceiro número: "))
+
+if numero2 < numero1 > numero3:
+    print("O maior número é o primeiro inserido:", numero1)
+elif numero1 < numero2 > numero3
+    print("O maior número é o segundo inserido:", numero2)
+else:
+    print("O maior número é o terceiro inserido:", numero3)
 
 
+# ###########################################################
 
+
+temperatura = int(input("Insira a temperatura em Celsius para a conversão para Fahrenheit: "))
+
+conversao = (temperatura * 9/5) + 32
+
+print("A conversão para Fahrenheit resultou em:", conversao)
+
+
+# ###########################################################
+# Questão 1 da lista:
+numero = int(input("Digite um número: "))
+
+if numero % 2 == 0:
+    print("Esse número é par.")
+else:
+    print("Esse número é ímpar.")
+
+
+# ###########################################################
 
 
 
