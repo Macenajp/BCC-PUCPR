@@ -4,13 +4,13 @@ resultado = primeiroNumero + segundoNumero
 
 print(resultado)
 
-#=====================================================================
+# ###########################################################
 anoDeNascimento = int(input("Em que ano você nasceu? "))
 idadeDoUsuario = 2025 - anoDeNascimento
 
 print("A sua idade é:", idadeDoUsuario)
 
-#=====================================================================
+# ###########################################################
 disciplina = input("Qual a disciplina escolhida? ")
 
 primeiraNota = int(input("Escreva a nota do primeiro bimestre: "))
@@ -22,7 +22,7 @@ mediaDasNotas = (primeiraNota + segundaNota + terceiraNota + quartaNota) / 4
 
 print("Sua média geral da disciplina", disciplina, "é:", mediaDasNotas)
 
-#=====================================================================
+# ###########################################################
 produto = input("Qual produto você quer comprar?" )
 valor = float(input("Insira o valor do produto: "))
 quantidade = int(input("Insira a quantidade que irá comprar: "))
