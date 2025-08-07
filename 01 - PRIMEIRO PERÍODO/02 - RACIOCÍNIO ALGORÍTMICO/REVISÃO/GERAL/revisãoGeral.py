@@ -31,7 +31,7 @@ valorFinal = valor * quantidade
 
 print("O valor final de sua compra ficou:", valorFinal)
 
-#=====================================================================	
+# ###########################################################
 produto = input("Qual produto você quer comprar?" )
 valor = float(input("Insira o valor do produto: "))
 quantidade = int(input("Insira a quantidade que irá comprar: "))
@@ -45,7 +45,8 @@ else
 
 print("O valor final de sua compra ficou:", valorFinal)
 
-# 
+# ###########################################################
+
 
 numero1 = int(input("Insira o primeiro número: "))
 numero2 = int(input("Insira o segundo número: "))
