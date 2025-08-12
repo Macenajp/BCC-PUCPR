@@ -3,7 +3,6 @@
 
 int main()
 {
-
     bool Frio = true;
     bool Calor = False;
 
