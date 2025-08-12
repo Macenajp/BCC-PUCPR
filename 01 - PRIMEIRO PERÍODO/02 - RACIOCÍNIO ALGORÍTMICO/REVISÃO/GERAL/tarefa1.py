@@ -25,3 +25,20 @@ else:
     print('Você foi reprovado!')
 
 '''
+
+
+
+
+'''
+numero1 = int(input('Digite o primeiro número: '))
+numero2 = int(input('Digite o primeiro número: '))
+numero3 = int(input('Digite o primeiro número: '))
+
+if numero2 > numero1 < numero3:
+    print('O menor número é o primeiro: ', numero1)
+if numero1 > numero2 < numero3:
+    print('O menor número é o segundo: ', numero2)
+if numero1 > numero3 < numero2:
+    print('O menor número é o terceiro: ', numero3)
+
+'''
