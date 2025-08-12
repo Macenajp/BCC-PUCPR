@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário</title>
+</head>
+
+<body>
+<form class="form">
+	<h1 class="titulo">FORMULÁRIO</h1>
+
+    <input type="text" placeholder="Nome">
+    <input type="text" placeholder="Sobrenome">
+    <input type="email" placeholder="E-mail">
+    <input type="number" placeholder="Matricula">
+    <input type="text" placeholder="Usuário">
+    <input type="password" placeholder="Senha">
+    <input type="password" placeholder="Confirmar Senha">
+
+    <button type="submit">ENVIAR</button>
+</form>
+
+<style>
+    body{
+        background-color: #121212;
+        justify-content: center;
+        text-align: center;        
+        display: flex;
+        padding: 140px;
+}
+
+    .titulo{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+}
+
+    .titulo:hover{
+        transition: all 0.3s ease;
+        color: #86E0FC;
+}
+
+    .form{
+        flex-direction: column;
+        display: flex;
+        width: 300px;
+        gap: 12px;
+}
+
+    input{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #121212;
+        color: rgb(255, 255, 255);
+        border: 1px solid #ccc;
+        border-color: white;
+        padding: 10px 20px;
+        border-radius: 3px;
+        padding: 8px 15px;
+        width: 280px;
+}
+
+    input:focus {
+        border: 1px solid #FA5858;
+}
+
+    input:hover{
+        transition: all 0.1s ease;
+        border-color: #86E0FC;
+        cursor: default;
+}
+
+    button{
+        align-self: center;
+        background-color: white;
+        border-color: white;
+        border-radius: 5px;
+        color:  #121212;
+        margin-top: 20px;
+        cursor: pointer;
+        padding: 10px;
+        width: 100px;
+        height: 40px;        
+
+}
+
+    button:hover{
+        background-color: #86E0FC;
+        transition: all 0.3s ease;
+        border-color: #121212;
+        transform: scale(1.1);
+        border-radius: 15px;
+        color: #121212;
+}
+
+
+</style>
+</body>
+</html>
