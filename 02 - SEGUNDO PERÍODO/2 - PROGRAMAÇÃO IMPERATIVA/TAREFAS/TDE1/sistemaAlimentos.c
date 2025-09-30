@@ -24,7 +24,7 @@ typedef struct {
     Alimento* alimento;
 } ItemOrdenacao;
 
-// Funções básicas
+// Funções iniciais:
 void trim(char *str) {
     int i = strlen(str) - 1;
     while (i >= 0 && isspace(str[i])) str[i--] = '\0';
@@ -69,7 +69,7 @@ void bubble_sort(ItemOrdenacao arr[], int n) {
             }
 }
 
-// FUNÇÃO COMPLETAMENTE CORRIGIDA PARA LER CSV
+// Função para ler o .CSV
 int carregar_arquivo(const char* filename, Alimento alimentos[]) {
     FILE* file = fopen(filename, "r");
     if (!file) {
@@ -80,7 +80,7 @@ int carregar_arquivo(const char* filename, Alimento alimentos[]) {
     char linha[500];
     int count = 0;
     
-    // Pular cabeçalho se existir
+    // Aqui pula o cabeçalho, se houver:
     if (fgets(linha, sizeof(linha), file)) {
         if (!isdigit(linha[0]) && strstr(linha, "numero")) {
             printf("Pulando cabeçalho...\n");
@@ -90,12 +90,12 @@ int carregar_arquivo(const char* filename, Alimento alimentos[]) {
     }
     
     while (fgets(linha, sizeof(linha), file) && count < MAX_ALIMENTOS) {
-        // Remover quebra de linha
+        // Remove a quebra de linha:
         linha[strcspn(linha, "\n")] = 0;
         
         if (strlen(linha) == 0) continue;
 
-        // PROCESSAMENTO MANUAL DO CSV
+        // Processamento manual da .CSV:
         char temp[500];
         strcpy(temp, linha);
         
@@ -107,7 +107,7 @@ int carregar_arquivo(const char* filename, Alimento alimentos[]) {
         char numero_str[20], descricao[200], umidade_str[20], energia_str[20];
         char proteina_str[20], carboidrato_str[20], categoria_str[100];
         
-        // Inicializar strings
+        // Inicializa as strings: 
         strcpy(descricao, "");
         strcpy(categoria_str, "");
         
@@ -131,17 +131,17 @@ int carregar_arquivo(const char* filename, Alimento alimentos[]) {
             }
         }
         
-        // Último campo (categoria)
+        // Último campo - 'Categoria':
         if (campo_atual == 6) {
             strcpy(categoria_str, inicio);
         }
         
-        // Remover aspas da descrição e categoria
+        // Para remover as aspas da descrição e categoria:
         char desc_limpa[200], cat_limpa[100];
         strcpy(desc_limpa, descricao);
         strcpy(cat_limpa, categoria_str);
         
-        // Remover aspas
+        // Remove as aspas:
         for (int i = 0; desc_limpa[i]; i++) {
             if (desc_limpa[i] == '\"') {
                 for (int j = i; desc_limpa[j]; j++) {
@@ -162,12 +162,12 @@ int carregar_arquivo(const char* filename, Alimento alimentos[]) {
         trim(desc_limpa);
         trim(cat_limpa);
         
-        // Converter valores
+        // Converte os valores:
         if (campo_atual >= 6) {
             alimentos[count].numero = atoi(numero_str);
             strcpy(alimentos[count].descricao, desc_limpa);
             
-            // Substituir "Tr" por 0
+            // Substitui o 'TR' por 0:
             alimentos[count].umidade = (strstr(umidade_str, "Tr")) ? 0.0 : atof(umidade_str);
             alimentos[count].energia = (strstr(energia_str, "Tr")) ? 0.0 : atof(energia_str);
             alimentos[count].proteina = (strstr(proteina_str, "Tr")) ? 0.0 : atof(proteina_str);
@@ -183,7 +183,7 @@ int carregar_arquivo(const char* filename, Alimento alimentos[]) {
     return count;
 }
 
-// Funções do menu
+// Funções do 'Menu':
 void listar_cats(Alimento alimentos[], int total) {
     printf("\n=== CATEGORIAS ===\n");
     Categoria cats[20];
@@ -237,7 +237,7 @@ void listar_alfabetico(Alimento alimentos[], int total) {
         }
     }
     
-    // Ordenação alfabética simples
+    // Coloca em ordem alfabética:
     for (int i = 0; i < count-1; i++) {
         for (int j = i+1; j < count; j++) {
             if (strcmp(itens[i]->descricao, itens[j]->descricao) > 0) {
