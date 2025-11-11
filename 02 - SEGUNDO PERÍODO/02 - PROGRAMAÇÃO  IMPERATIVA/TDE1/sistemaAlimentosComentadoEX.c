@@ -1,11 +1,12 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h> 
+#include <stdlib.h> // atoi, atof, qsort, exit
+#include <string.h> // strcmp, strtok, strncpy, strcspn
 
 #define MAX_ALIMENTOS 1000
 #define MAX_TEXTO 100
 #define MAX_CATEGORIAS 100
 
+// Estrutura principal dos dados
 typedef struct {
     int numero;
     char descricao[MAX_TEXTO];
@@ -18,18 +19,19 @@ typedef struct {
 
 // ============================================================================
 // FUNÇÕES DE COMPARAÇÃO (Para o qsort)
+// ============================================================================
 
-// (qsort) Ordem alfabética:
+// (qsort) Ordem alfabética
 int cmp_descricao(const void *a, const void *b) {
     return strcmp((*(Alimento**)a)->descricao, (*(Alimento**)b)->descricao);
 }
 
-// (qsort) Ordem decrescente:
+// (qsort) Ordem decrescente
 int cmp_energia(const void *a, const void *b) {
     return (*(Alimento**)b)->energia - (*(Alimento**)a)->energia;
 }
 
-// (qsort) Ordem decrescente (float):
+// (qsort) Ordem decrescente (float)
 int cmp_umidade(const void *a, const void *b) {
     Alimento *al1 = *(Alimento**)a;
     Alimento *al2 = *(Alimento**)b;
@@ -38,7 +40,7 @@ int cmp_umidade(const void *a, const void *b) {
     return 0;
 }
 
-// (qsort) Ordem decrescente (float):
+// (qsort) Ordem decrescente (float)
 int cmp_proteina(const void *a, const void *b) {
     Alimento *al1 = *(Alimento**)a;
     Alimento *al2 = *(Alimento**)b;
@@ -47,7 +49,7 @@ int cmp_proteina(const void *a, const void *b) {
     return 0;
 }
 
-// (qsort) Ordem decrescente (float):
+// (qsort) Ordem decrescente (float)
 int cmp_carboidrato(const void *a, const void *b) {
     Alimento *al1 = *(Alimento**)a;
     Alimento *al2 = *(Alimento**)b;
@@ -56,7 +58,7 @@ int cmp_carboidrato(const void *a, const void *b) {
     return 0;
 }
 
-// (qsort) Cálculo da relação (com proteção):
+// (qsort) Cálculo da relação (com proteção)
 int cmp_energia_proteina(const void *a, const void *b) {
     Alimento *al1 = *(Alimento**)a;
     Alimento *al2 = *(Alimento**)b;
@@ -67,7 +69,7 @@ int cmp_energia_proteina(const void *a, const void *b) {
     return 0;
 }
 
-// (qsort) Cálculo da relação (com proteção):
+// (qsort) Cálculo da relação (com proteção)
 int cmp_energia_carboidrato(const void *a, const void *b) {
     Alimento *al1 = *(Alimento**)a;
     Alimento *al2 = *(Alimento**)b;
@@ -80,20 +82,21 @@ int cmp_energia_carboidrato(const void *a, const void *b) {
 
 // ============================================================================
 // FUNÇÕES AUXILIARES
+// ============================================================================
 
-// Helper p/ evitar categorias duplicadas:
+// Helper p/ evitar categorias duplicadas
 int categoria_existe(char categorias[][MAX_TEXTO], int total, const char *nova) {
     for (int i = 0; i < total; i++)
         if (strcmp(categorias[i], nova) == 0) return 1;
     return 0;
 }
 
-// PERGUNTA 1: Leitura do arquivo e armazenamento:
+// PERGUNTA 1: Leitura do arquivo e armazenamento
 void carregar_alimentos(Alimento alimentos[], int *total) {
     FILE *arquivo = fopen("alimentos.csv", "r");
     if (!arquivo) {
         perror("Erro ao abrir o arquivo");
-        exit(1); 
+        exit(1); // da stdlib.h
     }
 
     char linha[512];
@@ -101,40 +104,42 @@ void carregar_alimentos(Alimento alimentos[], int *total) {
 
     while (fgets(linha, sizeof(linha), arquivo) && *total < MAX_ALIMENTOS) {
         linha[strcspn(linha, "\r\n")] = 0;
-        char *token = strtok(linha, ",");
+        char *token = strtok(linha, ","); // Quebra a linha no ","
         if (!token) continue;
 
         Alimento a;
-        a.numero = atoi(token);
+        a.numero = atoi(token); // da stdlib.h
 
         token = strtok(NULL, ",");
         strncpy(a.descricao, token ? token : "", MAX_TEXTO);
 
         token = strtok(NULL, ",");
-        a.umidade = token ? atof(token) : 0; 
+        a.umidade = token ? atof(token) : 0; // da stdlib.h
 
         token = strtok(NULL, ",");
-        a.energia = token ? atoi(token) : 0;
-        token = strtok(NULL, ",");
-        a.proteina = token ? atof(token) : 0; 
+        a.energia = token ? atoi(token) : 0; // da stdlib.h
 
         token = strtok(NULL, ",");
-        a.carboidrato = token ? atof(token) : 0;
+        a.proteina = token ? atof(token) : 0; // da stdlib.h
+
+        token = strtok(NULL, ",");
+        a.carboidrato = token ? atof(token) : 0; // da stdlib.h
 
         token = strtok(NULL, "\n");
         strncpy(a.categoria, token ? token : "", MAX_TEXTO);
 
-        alimentos[(*total)++] = a; // Serve para armazenar no vetor principal
+        alimentos[(*total)++] = a; // Armazena no vetor principal
     }
     fclose(arquivo);
 }
 
-// PERGUNTA 2: Listagem das categorias:
+// PERGUNTA 2: Listar categorias (únicas)
 void listar_categorias(Alimento alimentos[], int total) {
     char categorias[MAX_CATEGORIAS][MAX_TEXTO];
     int totalCategorias = 0;
 
     for (int i = 0; i < total; i++) {
+        // Usa a função helper
         if (!categoria_existe(categorias, totalCategorias, alimentos[i].categoria)) {
             strncpy(categorias[totalCategorias++], alimentos[i].categoria, MAX_TEXTO);
         }
@@ -171,7 +176,7 @@ void processar_categoria_com_n(Alimento alimentos[], int total, int (*comparar)(
     }
 
     // B. Ordena (qsort)
-    qsort(filtrados, totalFiltrados, sizeof(Alimento*), comparar); 
+    qsort(filtrados, totalFiltrados, sizeof(Alimento*), comparar); // da stdlib.h
     if (n > totalFiltrados) n = totalFiltrados;
 
     // C. Lista (Top N)
@@ -204,10 +209,10 @@ void processar_categoria_sem_n(Alimento alimentos[], int total, int (*comparar)(
         return;
     }
 
-    // B. Ordena o qsort
-    qsort(filtrados, totalFiltrados, sizeof(Alimento*), comparar); 
+    // B. Ordena (qsort)
+    qsort(filtrados, totalFiltrados, sizeof(Alimento*), comparar); // da stdlib.h
 
-    // C. Lista todos
+    // C. Lista (TODOS)
     printf("\n%s '%s':\n", titulo, categoriaBusca);
     for (int i = 0; i < totalFiltrados; i++) {
         Alimento *a = filtrados[i];
@@ -234,6 +239,7 @@ void menu() {
 
 // ============================================================================
 // MAIN (Função Principal)
+// ============================================================================
 
 int main() {
     Alimento alimentos[MAX_ALIMENTOS];
