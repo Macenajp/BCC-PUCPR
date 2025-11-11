@@ -95,34 +95,34 @@ void carregar_alimentos(Alimento alimentos[], int *total) {
     FILE *arquivo = fopen("alimentos.csv", "r");
     if (!arquivo) {
         perror("Erro ao abrir o arquivo");
-        exit(1); // da stdlib.h
+        exit(1);
     }
 
     char linha[512];
-    fgets(linha, sizeof(linha), arquivo); // ignora cabeçalho
+    fgets(linha, sizeof(linha), arquivo);             // ignora cabeçalho
 
     while (fgets(linha, sizeof(linha), arquivo) && *total < MAX_ALIMENTOS) {
         linha[strcspn(linha, "\r\n")] = 0;
-        char *token = strtok(linha, ","); // Quebra a linha no ","
+        char *token = strtok(linha, ",");            
         if (!token) continue;
 
         Alimento a;
-        a.numero = atoi(token); // da stdlib.h
+        a.numero = atoi(token); 
 
         token = strtok(NULL, ",");
         strncpy(a.descricao, token ? token : "", MAX_TEXTO);
 
         token = strtok(NULL, ",");
-        a.umidade = token ? atof(token) : 0; // da stdlib.h
+        a.umidade = token ? atof(token) : 0; 
 
         token = strtok(NULL, ",");
-        a.energia = token ? atoi(token) : 0; // da stdlib.h
+        a.energia = token ? atoi(token) : 0; 
 
         token = strtok(NULL, ",");
-        a.proteina = token ? atof(token) : 0; // da stdlib.h
+        a.proteina = token ? atof(token) : 0; 
 
         token = strtok(NULL, ",");
-        a.carboidrato = token ? atof(token) : 0; // da stdlib.h
+        a.carboidrato = token ? atof(token) : 0; 
 
         token = strtok(NULL, "\n");
         strncpy(a.categoria, token ? token : "", MAX_TEXTO);
@@ -173,7 +173,7 @@ void processar_categoria_com_n(Alimento alimentos[], int total, int (*comparar)(
     }
 
     // B. Ordena (qsort)
-    qsort(filtrados, totalFiltrados, sizeof(Alimento*), comparar); // da stdlib.h
+    qsort(filtrados, totalFiltrados, sizeof(Alimento*), comparar); 
     if (n > totalFiltrados) n = totalFiltrados;
 
     // C. Lista (Top N)
@@ -206,7 +206,7 @@ void processar_categoria_sem_n(Alimento alimentos[], int total, int (*comparar)(
     }
 
     // B. Ordena (qsort)
-    qsort(filtrados, totalFiltrados, sizeof(Alimento*), comparar); // da stdlib.h
+    qsort(filtrados, totalFiltrados, sizeof(Alimento*), comparar); 
 
     // C. Lista (TODOS)
     printf("\n%s '%s':\n", titulo, categoriaBusca);
