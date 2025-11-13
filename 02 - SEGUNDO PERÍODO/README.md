@@ -11,8 +11,6 @@ Este repositório contém as atividades da disciplina de todas as matérias que 
 - `/03 - PROGRAMAÇÃO WEB`: Para todos os projetos desenvolvidos na matéria.
     - `TAREFAS`: Voltado para pequenos exercícios, tarefas e revisões da disciplina.
  
-- `/04 - SIS. CIBERFÍSICO`: Para todos os projetos desenvolvidos na matéria.
-
 ## 🚀 Objetivo
 Guardar as atividades realizadas para fins de consulta e revisão de aprendizado.  
 Sugestão de melhorias são bem aceitas!
