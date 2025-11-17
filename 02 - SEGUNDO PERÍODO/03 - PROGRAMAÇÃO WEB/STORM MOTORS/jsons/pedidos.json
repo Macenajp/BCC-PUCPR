@@ -1,0 +1,13 @@
+[
+    {
+        "modelo": "Range Rover",
+        "cor": "Vermelho",
+        "motor": "V12",
+        "ano": "2025",
+        "cambio": "Manual",
+        "combustivel": "Diesel",
+        "valor": "R$ 950.000",
+        "imagem": "http:\/\/localhost\/web\/web\/midias\/carro3VermelhoEstendido.JPG",
+        "data": "06\/11\/2025 22:04"
+    }
+]
