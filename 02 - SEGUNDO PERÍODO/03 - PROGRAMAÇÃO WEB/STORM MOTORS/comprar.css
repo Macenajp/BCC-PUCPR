@@ -1,0 +1,249 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Poppins;
+    overflow-x: hidden;
+    background-color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    z-index: 1;
+}
+
+.container.scroll { 
+    background-color: black;
+    z-index: 1;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.6s;
+}
+
+a:hover {
+    color: #b3b3b3;
+    transition: 0.6s
+}
+
+p {
+    color: white;
+    font-size: 18px;
+}
+
+.circle {
+    background-color: black;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+.circle img {
+    border-radius: 50%;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;  
+}
+
+.quadrado-compra {
+    display: flex;
+    height: 800px;
+    width: 900px;
+    background-color: #141414;
+    padding: 200px;     
+    border-radius: 20px;
+    color: white;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}       
+
+.quadrado-imagem {
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+    border-radius: 20px;
+}
+
+.infos-compra {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.info-produto {
+    display: flex;
+    width: 650px;
+    height: 200px;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    gap: 10px;
+}
+
+#pix, #boleto, #credito {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 850px;
+    height: 60px;
+    font-size: 22px;
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#pix:hover, #boleto:hover, #credito:hover {
+    transform: scale(1.02, 1.02);
+    transition: 1s;
+}
+
+#comprar {
+    background-color: #e9b530;
+    width: 850px;
+    height: 60px;
+    font-size: 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+#comprar:hover {
+    background-color: black;
+    transform: scale(1.05, 1.05);
+    transition: 1s; 
+    color: white;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.popup {
+    background-color: #1a1a1a;
+    padding: 40px 60px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    width: 400px;
+    animation: aparecer 0.3s ease;
+}
+
+.popup h2 {
+    color: #e9b530;
+    margin-bottom: 15px;
+}
+
+.popup p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.botao-ok {
+    background-color: #e9b530;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-ok:hover {
+    background-color: black;
+    transform: scale(1.05, 1.05);
+    transition: 1s;
+    color: white;
+}
+
+#pix.botao-selecionado,
+#boleto.botao-selecionado,
+#credito.botao-selecionado {
+    background-color: gray; 
+    color: white;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup {
+    background-color: #1a1a1a;
+    padding: 40px 60px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    width: 400px;
+}
+
+.popup h2 {
+    color: #e9b530;
+    margin-bottom: 15px;
+}
+
+.popup p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.botao-ok {
+    background-color: #e9b530;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-ok:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+}

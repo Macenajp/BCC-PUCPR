@@ -1,0 +1,245 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Poppins;
+    overflow-x: hidden;
+    background-color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.container.scroll {
+    background-color: black;
+    z-index: 1;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.6s;
+}
+
+a:hover {
+    color: #b3b3b3;
+    transition: 0.6s
+}
+
+p {
+    color: white;
+    font-size: 18px;
+}
+
+.circle {
+    background-color: black;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+.circle img {
+    border-radius: 50%;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+label {
+    margin-left: 170px;
+    font-size: 40px;
+    font-weight: 500;
+    color: white;
+}
+
+h1 {
+    color: white;
+    margin-left: 200px;
+    font-weight: 500;
+}
+
+button {
+    height: 60px;
+    width: 220px;
+    border: transparent;
+    border-radius: 20px;
+    font-size: 18px;
+    transition: 0.6s;
+    cursor: pointer;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+button:hover {
+    background-color: black;
+    transform: scale(1.05, 1.05);
+    transition: 0.6s;
+    color: white;
+}
+
+.principal{
+    padding-top: 100px;
+}
+
+.quadrado1 {
+    display: flex;
+    background-color: #141414;
+    height: 420px;
+    width: 1500px;
+    margin-left: 200px;
+    border-radius: 20px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.quadrado2 {
+    display: flex;
+    background-color: #141414;
+    height: 420px;
+    width: 1500px;
+    margin-left: 200px;
+    border-radius: 20px;
+    margin-top: 20px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.quadrado3 {
+    display: flex;
+    background-color: #141414;
+    height: 420px;
+    width: 1500px;
+    margin-left: 200px;
+    border-radius: 20px;
+    margin-top: 20px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.quadradinho1, .quadradinho2, .quadradinho3 {
+    display: flex;
+    background-color: black;
+    height: 350px;
+    width: 420px;
+    border-radius: 20px;
+    margin-left: 50px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.quadradinho1:hover, .quadradinho2:hover, .quadradinho3:hover {
+    transform: scale(1.05, 1.05);
+}
+
+#img1, #img2, #img3 {
+    border-radius: 20px;
+}
+
+.botoes-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 650px;
+    margin-top: 10px;
+}
+
+#mais-infos {
+    background-color: rgb(186, 186, 186);
+    color: black;
+    width: 300px;
+    height: 65px;
+}
+
+#mais-info:hover {
+    background-color: black;
+    color: white;
+    transition: 1s;
+}
+
+#botao-comprar {
+    width: 300px;
+    height: 65px;
+    background-color: #e9b530;
+    color: black;
+}
+
+#botao-comprar:hover {
+    background-color: black;
+    color: white;
+    transition: 1s;
+}
+
+.info-carro {
+    height: 10px;
+    width: 10px;
+}
+
+#modelo {
+    display: flex;
+    font-size: 20px;
+    margin-top: -180px;
+    margin-left: 100px;
+}
+
+#motor {
+    display: flex;
+    font-size: 20px;
+}
+
+#ano {
+    font-size: 20px;
+}
+
+#cor {
+    display: flex;
+    font-size: 20px;
+}
+
+#cambio {
+    font-size: 20px;
+}
+
+#combustivel {
+    font-size: 20px;
+    margin-left: 100px;
+}
+
+.motor-ano {
+    display: flex;
+    margin-left: -100px;
+}
+
+.cor-cambio {
+    display: flex;
+    margin-left: -100px;
+}
+
+.botoes-info a {
+    color: black;
+}
+
+.botoes-info a:hover {
+    color: white;
+}
