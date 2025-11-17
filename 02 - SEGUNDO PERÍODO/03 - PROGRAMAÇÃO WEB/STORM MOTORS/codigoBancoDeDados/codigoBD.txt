@@ -1,0 +1,230 @@
+CREATE DATABASE IF NOT EXISTS stormmotors;
+
+USE stormmotors;
+
+CREATE TABLE IF NOT EXISTS clientes (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(200),
+    endereco VARCHAR(200),
+    email VARCHAR(200),
+    cpf VARCHAR(200),
+    senha VARCHAR(200),
+    telefone VARCHAR(200)
+);
+
+CREATE TABLE IF NOT EXISTS carros (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    modelo VARCHAR(200),
+    cor VARCHAR(200),
+    motor VARCHAR(200),
+    ano VARCHAR(200),
+    cambio VARCHAR(200),
+    combustivel VARCHAR(200),
+    descricao VARCHAR(200),
+    valor VARCHAR(200)
+);
+
+CREATE TABLE IF NOT EXISTS pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    nome_carro VARCHAR(255),
+    cor VARCHAR(100),
+    preco VARCHAR(200),
+    imagem VARCHAR(255),
+    data_pedido DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES clientes(id)
+);
+
+CREATE TABLE IF NOT EXISTS administradores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL
+);
+
+INSERT INTO administradores (nome, email, senha)
+VALUES ('NathanAdmin', 'nathanadmin@exemplo.com', '$2y$10$6WK0knePq9IkxfL5NMiDv.JbBMOskrW.Xhy76R/gctJ0TCnJi6q9C');
+
+CREATE TABLE IF NOT EXISTS status_pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_pedido INT NOT NULL,
+    status VARCHAR(100) NOT NULL DEFAULT 'Em Processamento', 
+    data_status DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_pedido) REFERENCES pedidos(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS pagamentos (
+    id INT AUTO_INCREMENT PRIMARY KEY,                     
+    id_pedido INT NOT NULL,                                 
+    valor_pago VARCHAR(200),                     
+    status_pagamento VARCHAR(50) DEFAULT 'pagamento realizado', 
+    data_hora DATETIME DEFAULT CURRENT_TIMESTAMP,          
+    FOREIGN KEY (id_pedido) REFERENCES pedidos(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS pre_vendas (
+    id INT AUTO_INCREMENT PRIMARY KEY,                   
+    id_usuario INT NOT NULL,                             
+    nome_carro VARCHAR(255) NOT NULL,                    
+    valor VARCHAR(200) NOT NULL,                           
+    data_pre_venda DATETIME DEFAULT CURRENT_TIMESTAMP,     
+    status VARCHAR(50) DEFAULT 'pré-venda registrada',     
+    FOREIGN KEY (id_usuario) REFERENCES clientes(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS montadora (
+    id INT AUTO_INCREMENT PRIMARY KEY,             
+    id_pedido INT NOT NULL, 
+    nome VARCHAR(255) NOT NULL DEFAULT 'Storm Motors - Brasil',         
+    pais VARCHAR(100) DEFAULT 'Brasil',
+    nome_time VARCHAR(100) NOT NULL DEFAULT 'Time A',                 
+    status_montagem VARCHAR(50) DEFAULT 'Em preparação', 
+    data_inicio DATETIME DEFAULT CURRENT_TIMESTAMP,      
+    FOREIGN KEY (id_pedido) REFERENCES pedidos(id) ON DELETE CASCADE
+);
+
+-- BUGATTI 
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Bugatti Chiron", "Azul", "V8", "2025", "Automático", "Gasolina", 
+"O Bugatti Chiron é um hipercarro de luxo com motor V8 de 8.0L, tecnologia avançada e desempenho extremo, capaz de ultrapassar 400 km/h com conforto e sofisticação.",
+"R$ 1.200.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Bugatti Chiron", "Azul", "V10", "2025", "Automático", "Gasolina", 
+"O Bugatti Chiron é um hipercarro de luxo com motor V10 de 8.0L, tecnologia avançada e desempenho extremo, capaz de ultrapassar 400 km/h com conforto e sofisticação.",
+"R$ 1.200.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Bugatti Chiron", "Azul", "V12", "2025", "Automático", "Gasolina", 
+"O Bugatti Chiron é um hipercarro de luxo com motor V12 de 8.0L, tecnologia avançada e desempenho extremo, capaz de ultrapassar 400 km/h com conforto e sofisticação.",
+"R$ 1.200.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Bugatti Chiron", "Vermelho", "V8", "2025", "Automático", "Gasolina", 
+"O Bugatti Chiron é um hipercarro de luxo com motor V8 de 8.0L, tecnologia avançada e desempenho extremo, capaz de ultrapassar 400 km/h com conforto e sofisticação.",
+"R$ 1.200.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Bugatti Chiron", "Vermelho", "V10", "2025", "Automático", "Gasolina", 
+"O Bugatti Chiron é um hipercarro de luxo com motor V10 de 8.0L, tecnologia avançada e desempenho extremo, capaz de ultrapassar 400 km/h com conforto e sofisticação.",
+"R$ 1.200.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Bugatti Chiron", "Vermelho", "V12", "2025", "Automático", "Gasolina", 
+"O Bugatti Chiron é um hipercarro de luxo com motor V12 de 8.0L, tecnologia avançada e desempenho extremo, capaz de ultrapassar 400 km/h com conforto e sofisticação.",
+"R$ 1.200.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Bugatti Chiron", "Preto", "V8", "2025", "Automático", "Gasolina", 
+"O Bugatti Chiron é um hipercarro de luxo com motor V8 de 8.0L, tecnologia avançada e desempenho extremo, capaz de ultrapassar 400 km/h com conforto e sofisticação.",
+"R$ 1.200.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Bugatti Chiron", "Preto", "V10", "2025", "Automático", "Gasolina", 
+"O Bugatti Chiron é um hipercarro de luxo com motor V10 de 8.0L, tecnologia avançada e desempenho extremo, capaz de ultrapassar 400 km/h com conforto e sofisticação.",
+"R$ 1.200.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Bugatti Chiron", "Preto", "V12", "2025", "Automático", "Gasolina", 
+"O Bugatti Chiron é um hipercarro de luxo com motor V12 de 8.0L, tecnologia avançada e desempenho extremo, capaz de ultrapassar 400 km/h com conforto e sofisticação.",
+"R$ 1.200.000");
+
+-- MCLAREN SENNA
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("McLaren Senna", "Azul", "V8 Twin-Turbo", "2025", "Automático", "Gasolina", 
+"O McLaren Senna é um supercarro de alta performance, projetado para circuitos e ruas, com motor V8 Twin-Turbo, aerodinâmica avançada e aceleração impressionante, unindo leveza e potência.",
+"R$ 1.700.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("McLaren Senna", "Azul", "V10 Twin-Turbo", "2025", "Automático", "Gasolina", 
+"O McLaren Senna é um supercarro de alta performance, projetado para circuitos e ruas, com motor V10 Twin-Turbo, aerodinâmica avançada e aceleração impressionante, unindo leveza e potência.",
+"R$ 1.700.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("McLaren Senna", "Azul", "V10 Twin-Turbo", "2025", "Automático", "Gasolina", 
+"O McLaren Senna é um supercarro de alta performance, projetado para circuitos e ruas, com motor V10 Twin-Turbo, aerodinâmica avançada e aceleração impressionante, unindo leveza e potência.",
+"R$ 1.700.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("McLaren Senna", "Vermelho", "V8 Twin-Turbo", "2025", "Automático", "Gasolina", 
+"O McLaren Senna é um supercarro de alta performance, projetado para circuitos e ruas, com motor V8 Twin-Turbo, aerodinâmica avançada e aceleração impressionante, unindo leveza e potência.",
+"R$ 1.700.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("McLaren Senna", "Vermelho", "V10 Twin-Turbo", "2025", "Automático", "Gasolina", 
+"O McLaren Senna é um supercarro de alta performance, projetado para circuitos e ruas, com motor V10 Twin-Turbo, aerodinâmica avançada e aceleração impressionante, unindo leveza e potência.",
+"R$ 1.700.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("McLaren Senna", "Vermelho", "V10 Twin-Turbo", "2025", "Automático", "Gasolina", 
+"O McLaren Senna é um supercarro de alta performance, projetado para circuitos e ruas, com motor V10 Twin-Turbo, aerodinâmica avançada e aceleração impressionante, unindo leveza e potência.",
+"R$ 1.700.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("McLaren Senna", "Preto", "V8 Twin-Turbo", "2025", "Automático", "Gasolina", 
+"O McLaren Senna é um supercarro de alta performance, projetado para circuitos e ruas, com motor V8 Twin-Turbo, aerodinâmica avançada e aceleração impressionante, unindo leveza e potência.",
+"R$ 1.700.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("McLaren Senna", "Preto", "V10 Twin-Turbo", "2025", "Automático", "Gasolina", 
+"O McLaren Senna é um supercarro de alta performance, projetado para circuitos e ruas, com motor V10 Twin-Turbo, aerodinâmica avançada e aceleração impressionante, unindo leveza e potência.",
+"R$ 1.700.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("McLaren Senna", "Preto", "V10 Twin-Turbo", "2025", "Automático", "Gasolina", 
+"O McLaren Senna é um supercarro de alta performance, projetado para circuitos e ruas, com motor V10 Twin-Turbo, aerodinâmica avançada e aceleração impressionante, unindo leveza e potência.",
+"R$ 1.700.000");
+
+-- RANGE ROVER
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Range Rover", "Azul", "V8", "2025", "Manual", "Diesel", 
+"A Range Rover é um SUV de luxo robusto e sofisticado, equipada com motor V8 diesel, câmbio manual, conforto premium e tecnologia avançada, perfeita para cidade e off-road.",
+"R$ 950.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Range Rover", "Azul", "V10", "2025", "Manual", "Diesel", 
+"A Range Rover é um SUV de luxo robusto e sofisticado, equipada com motor V10 diesel, câmbio manual, conforto premium e tecnologia avançada, perfeita para cidade e off-road.",
+"R$ 950.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Range Rover", "Azul", "V12", "2025", "Manual", "Diesel", 
+"A Range Rover é um SUV de luxo robusto e sofisticado, equipada com motor V12 diesel, câmbio manual, conforto premium e tecnologia avançada, perfeita para cidade e off-road.",
+"R$ 950.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Range Rover", "Vermelho", "V8", "2025", "Manual", "Diesel", 
+"A Range Rover é um SUV de luxo robusto e sofisticado, equipada com motor V8 diesel, câmbio manual, conforto premium e tecnologia avançada, perfeita para cidade e off-road.",
+"R$ 950.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Range Rover", "Vermelho", "V10", "2025", "Manual", "Diesel", 
+"A Range Rover é um SUV de luxo robusto e sofisticado, equipada com motor V10 diesel, câmbio manual, conforto premium e tecnologia avançada, perfeita para cidade e off-road.",
+"R$ 950.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Range Rover", "Vermelho", "V12", "2025", "Manual", "Diesel", 
+"A Range Rover é um SUV de luxo robusto e sofisticado, equipada com motor V12 diesel, câmbio manual, conforto premium e tecnologia avançada, perfeita para cidade e off-road.",
+"R$ 950.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Range Rover", "Preto", "V8", "2025", "Manual", "Diesel", 
+"A Range Rover é um SUV de luxo robusto e sofisticado, equipada com motor V8 diesel, câmbio manual, conforto premium e tecnologia avançada, perfeita para cidade e off-road.",
+"R$ 950.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Range Rover", "Preto", "V10", "2025", "Manual", "Diesel", 
+"A Range Rover é um SUV de luxo robusto e sofisticado, equipada com motor V10 diesel, câmbio manual, conforto premium e tecnologia avançada, perfeita para cidade e off-road.",
+"R$ 950.000");
+
+INSERT INTO carros (modelo, cor, motor, ano, cambio, combustivel, descricao, valor)
+VALUES ("Range Rover", "Preto", "V12", "2025", "Manual", "Diesel", 
+"A Range Rover é um SUV de luxo robusto e sofisticado, equipada com motor V12 diesel, câmbio manual, conforto premium e tecnologia avançada, perfeita para cidade e off-road.",
+"R$ 950.000");
+
+
+
+
+
+
+
+
