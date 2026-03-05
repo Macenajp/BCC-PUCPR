@@ -1,6 +1,6 @@
 # 🎓 BCC - PUCPR
 
-Repositório pessoal contendo atividades, exercícios, projetos e anotações desenvolvidas ao longo do curso de **Bacharelado em Ciência da Computação** pela **Pontifícia Universidade Católica do Paraná (PUCPR)**.
+Repositório pessoal contendo atividades, exercícios, projetos e anotações desenvolvidas, do mais simples ao mais complexo, durante o curso de **Bacharelado em Ciência da Computação** pela **Pontifícia Universidade Católica do Paraná (PUCPR)**.
 
 > 👨‍💻 Autor: João Pedro Macena C.
 > 📍 Início do curso: 2025  
