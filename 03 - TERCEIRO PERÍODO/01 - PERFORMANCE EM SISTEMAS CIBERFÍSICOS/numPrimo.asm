@@ -10,6 +10,8 @@ main:
     mov ecx, eax
     dec ecx
 
+
+
 laco_primo:
     cmp ecx, 1
     jz verdadeiro_primo
@@ -25,6 +27,8 @@ laco_primo:
 
     dec ecx
     jmp laco_primo
+
+
 
 verdadeiro_primo:
     mov edi, 1
