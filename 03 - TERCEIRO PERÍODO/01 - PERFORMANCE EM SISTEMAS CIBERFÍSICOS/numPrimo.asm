@@ -1,7 +1,7 @@
 ; Exercício em Assembly:
 ; N°: 3 das 8 questões propostas
 
-; Sobre o resultado: Se EDI = 0, então o número é primo, caso contrário, não é primo:
+; Sobre o resultado: Se EDI = 1, então o número é primo, caso contrário, não é primo:
 
 main:
     mov eax, 3
