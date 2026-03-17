@@ -1,4 +1,5 @@
-;  Exercício de exemplo:
+;  Exercício de exemplo - apresentado em sala:
+
 inicio:
 mov eax, 200
 mov ebx, 1
