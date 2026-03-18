@@ -1,3 +1,6 @@
+; Questão escolhida: 4 
+; Descrição: "Eleva um número a uma potência (EAX=numero, EBX=potencia, resultado em EDI)"
+
 inicio:
 mov eax, 3    
 mov ebx, 5     
