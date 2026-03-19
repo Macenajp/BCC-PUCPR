@@ -1,3 +1,7 @@
+; Questão escolhida: 6 
+; Descrição: "Verifica se um número é um número perfeito (EAX=número, atribui 1 a registrador EDI se sim)";
+; Números perfeitos: 6, 28, 496, 8128...
+
 inicio:
 mov eax, 6      
 mov ebx, eax    
