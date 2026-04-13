@@ -46,7 +46,7 @@ def conectar_wifi():
         return False
 
 
-
+# É o "cérebro" do sistema. Recebe mensagens MQTT automaticamente, interpreta o comando em JSON e executa a ação correspondente: ligar/desligar LED ou publicar dados do sensor.
 def callback_mensagem(topico, mensagem):
     global led_estado
     topico = topico.decode("utf-8")
@@ -73,14 +73,12 @@ def callback_mensagem(topico, mensagem):
         print(f"[MICRO] Erro ao processar: {e}")
 
 
-
+# Duas funções que montam e enviam mensagens JSON ao broker: uma com apenas o estado do LED, outra com todos os dados simulados do sensor.
 def publicar_estado():
     estado = "ligado" if led_estado else "desligado"
     msg = json.dumps({"led": estado})
     client.publish(TOPICO_PUBLICAR, msg)
     print(f"[MICRO] Publicado: {msg}")
-
-
 
 def publicar_dados_sensor():
     dados = {
@@ -95,6 +93,7 @@ def publicar_dados_sensor():
 
 
 # ---- Inicio ----
+# Inicializa tudo, conecta ao broker, registra o callback e entra em loop eterno: verifica mensagens a cada segundo e publica dados automaticamente a cada 30 segundos. Ao encerrar, desconecta do broker de forma limpa.
 if not conectar_wifi():
     print("Abortando: sem Wi-Fi.")
     raise SystemExit
