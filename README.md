@@ -1,9 +1,9 @@
-# 🎓 BCC - PUCPR
+## 🎓 BCC - PUCPR
 
 Repositório pessoal com foco voltado apenas para guardar atividades, exercícios, projetos e anotações desenvolvidas, do mais simples ao mais complexo, durante o curso de **Bacharelado em Ciência da Computação** pela **Pontifícia Universidade Católica do Paraná (PUCPR)**.
 
 > 👨‍💻 Autor: João Pedro Macena C.
-> 📍 Início do curso: 2025  
+> 📍 Início do curso: 2025
 
 ---
 
