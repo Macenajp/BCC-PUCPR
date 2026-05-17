@@ -1,4 +1,4 @@
-// Terminar / Arrumar:
+// Terminar & Arrumar:
 class InicializaVetor extends Thread {
     private Double[] vetor;
     private int inicio;
