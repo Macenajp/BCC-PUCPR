@@ -47,7 +47,7 @@ public class Main {
         threadInicializacao.start();
         threadInicializacao.join();
 
-        System.out.println("Encerrou inicalizacao");
+        System.out.println("Encerrou a inicalizacao");
 
         ComputaThread threadComputacao = new ComputaThread(vetorMultithread);
         threadComputacao.start();
@@ -56,7 +56,7 @@ public class Main {
         System.out.println(threadComputacao.getQuantidade());
 
         long fim = System.currentTimeMillis();
-        long duração = (fim - inicio);
-        System.out.println(duração);
+        long duracao = (fim - inicio);
+        System.out.println(duracao);
     }
 }
