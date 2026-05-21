@@ -20,7 +20,7 @@ class AtvThread extends Thread {
                 this.numeros[i] = random.nextDouble();
             }
         } catch (InterruptedException exception) {
-            throw new RuntimeException("deu erro bobão");
+            throw new RuntimeException("Erro");
         }
     }
 }
