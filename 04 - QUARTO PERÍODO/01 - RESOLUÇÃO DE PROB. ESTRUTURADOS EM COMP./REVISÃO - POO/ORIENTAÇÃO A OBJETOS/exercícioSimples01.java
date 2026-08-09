@@ -22,7 +22,7 @@ class Contador {
 
 public class exercicioSimples01 {
     public static void main(String[] args) {
-        Contador contador = new Contador(5);
+        Contador contador = new Contador(20);
 
         contador.incrementar();
         System.out.println("Valor depois de ser incrementado: " + contador.getValor());
