@@ -73,7 +73,7 @@ class Pais {
 
 
 
-public class exercicioSimples02 {
+public class exercícioSimples02 {
     public static void main(String[] args) {
         Pais brasil = new Pais("BRA", "Brasil", 8515767.049);
         brasil.setPopulacao(202768562);
