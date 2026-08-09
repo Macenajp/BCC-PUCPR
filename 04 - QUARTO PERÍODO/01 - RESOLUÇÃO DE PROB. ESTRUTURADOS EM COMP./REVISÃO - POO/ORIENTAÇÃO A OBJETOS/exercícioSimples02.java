@@ -10,17 +10,16 @@ class Pais {
 
 
 
-    // Construtor que inicializa:
-    public Pais(String codigoIso, String nome, double dimensao) {
-        this.codigoIso = codigoIso;             // O código ISO,
-        this.nome = nome;                       // o nome,
-        this.dimensao = dimensao;               // e também a dimensão
+    public Pais(String codigoIso, String nome, double dimensao) {    // Construtor que inicializa:
+        this.codigoIso = codigoIso;                                     // O código ISO,
+        this.nome = nome;                                               // o nome,
+        this.dimensao = dimensao;                                       // e também a dimensão
         this.vizinhos = new ArrayList<>();
     }
 
 
 
-    // Métodos de acesso (Getters e Setters)
+    // Métodos de acesso:
     public String getCodigoIso() { return codigoIso; }
     public void setCodigoIso(String codigoIso) { this.codigoIso = codigoIso; }
 
